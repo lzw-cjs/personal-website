@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>档案 // 关于此人 — 李知旺</title>
+    <meta name="description" content="AI Agent 全栈开发者 · 6+ 项目实战 · MCP 协议先行实践 · 求职深圳">
+
+    <!-- 内联 SVG favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff6b1a'/%3E%3Crect x='6' y='8' width='8' height='8' fill='%230a0908' transform='rotate(-5 10 12)'/%3E%3Ccircle cx='22' cy='12' r='3.5' fill='%231a3a52'/%3E%3Cpolygon points='8,18 24,16 26,28 10,26' fill='%230a0908'/%3E%3C/svg%3E">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Special+Elite&family=Noto+Serif+SC:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+<body class="archive-mode">
+
+    <!-- 顶部状态条 -->
+    <header class="archive-tag">
+        <div class="tag-left">
+            <a href="index.html" class="back-link">←</a>
+            <span class="dot"></span>
+            <span class="archive-id">ARCHIVE / 2099</span>
+        </div>
+        <div class="tag-right">
+            <span class="stamp" id="liveClock">--:--:--</span>
+            <span class="divider">·</span>
+            <span class="stamp">CAT-002 / DOSSIER</span>
+        </div>
+    </header>
+
+    <!-- 个人简介主体 -->
+    <section class="dossier">
+        <div class="noise-layer" aria-hidden="true"></div>
+
+        <div class="dossier-grid">
+
+            <!-- 左侧：头像 + 基本信息 -->
+            <aside class="dossier-side">
+                <!-- 几何拼图头像 -->
+                <div class="avatar">
+                    <div class="avatar-frame">
+                        <svg viewBox="0 0 200 200" class="avatar-svg" aria-hidden="true">
+                            <!-- 抽象几何头像：4 个色块组成的"面孔" -->
+                            <rect x="20" y="20" width="80" height="80" fill="#c8412c" transform="rotate(-5 60 60)"/>
+                            <circle cx="140" cy="60" r="38" fill="#1a3a52"/>
+                            <polygon points="40,110 130,100 145,180 50,175" fill="#ff6b1a" opacity="0.85"/>
+                            <rect x="110" y="120" width="70" height="60" fill="#0a0908"/>
+                            <line x1="0" y1="0" x2="200" y2="200" stroke="#0a0908" stroke-width="0.5" opacity="0.3"/>
+                        </svg>
+                        <div class="avatar-stamp" aria-hidden="true">VERIFIED</div>
+                    </div>
+                    <p class="avatar-caption">↑ 抽象自画像</p>
+                </div>
+
+                <!-- 基本信息 -->
+                <dl class="info-list">
+                    <div class="info-row">
+                        <dt>NAME</dt>
+                        <dd>李知旺</dd>
+                    </div>
+                    <div class="info-row">
+                        <dt>ROLE</dt>
+                        <dd>AI Agent 全栈开发者</dd>
+                    </div>
+                    <div class="info-row">
+                        <dt>BASED</dt>
+                        <dd>深圳（求职）· 湖南（学校）</dd>
+                    </div>
+                    <div class="info-row">
+                        <dt>SCHOOL</dt>
+                        <dd>湖南财政经济学院 · 人文地理与城乡规划 · 大三</dd>
+                    </div>
+                    <div class="info-row">
+                        <dt>GITHUB</dt>
+                        <dd><a href="https://github.com/lzw-cjs" target="_blank" rel="noopener">@lzw-cjs</a></dd>
+                    </div>
+                    <div class="info-row">
+                        <dt>DAILY</dt>
+                        <dd>Notion / Obsidian / IMA / OneNote</dd>
+                    </div>
+                </dl>
+
+                <!-- 二维码占位（创意设计） -->
+                <div class="qr-card">
+                    <div class="qr-fake" aria-hidden="true">
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                        <div class="qr-pixel"></div><div class="qr-pixel"></div><div class="qr-pixel"></div>
+                    </div>
+                    <p class="qr-label">扫码 / 假装扫码</p>
+                </div>
+            </aside>
+
+            <!-- 右侧：内容主体 -->
+            <article class="dossier-main">
+
+                <!-- 标题区 -->
+                <header class="dossier-header">
+                    <p class="file-code">DOSSIER // CAT-002</p>
+                    <h1 class="dossier-title">关于此人</h1>
+                    <p class="dossier-sub">A Field Note on a Human-Computer Symbiont</p>
+                </header>
+
+                <!-- 第一段：我是谁 -->
+                <section class="prose">
+                    <div class="prose-marker">§I</div>
+                    <h2 class="prose-title">我是谁</h2>
+                    <p>
+                        <mark>AI Agent 全栈开发者</mark>，独立完成 6+ 个 AI Agent 项目，覆盖 Multi-Agent 协作、RAG 知识库、MCP 协议、桌面应用、数据分析全链路。核心技术栈：LangChain + LangGraph + FastMCP + FastAPI。
+                    </p>
+                    <p>
+                        最新项目基于 Multi-Agent 架构开发了项目管理助手，并用 FastMCP 封装为 MCP Server（10 Tools + 3 Resources + 3 Prompts），已在 <strong>Claude Code、Claude Desktop、Cursor、Trea、OpenClaw 5 个平台验证</strong>。完成产品化交付：54 个 pytest 测试用例（核心覆盖率 85%+）、Gradio Web Demo、GitHub Actions CI/CD。旗舰项目 <strong>arcgis-agent 已发布 PyPI v0.1.0</strong>。
+                    </p>
+                    <p>
+                        专业是<strong>人文地理与城乡规划</strong>（湖南财政经济学院），从国土空间规划跨界到 AI Agent 工程。这种"地理信息 × AI"的交叉背景，让我对智慧城市、空间数据等垂直领域的 AI Agent 应用有更深的理解。
+                    </p>
+                    <p>
+                        <strong>我相信代码是写给自己未来的笔记</strong>——每一次提交、每一段注释、每一份 README，都是未来某个凌晨三点需要它们的人（包括我自己）的路标。我用 <em>Notion / Obsidian / IMA / OneNote</em> 管理日常积累，把学习路径、项目复盘、踩坑记录沉淀成可检索的"第二大脑"。
+                    </p>
+                </section>
+
+                <!-- 第二段：相信什么 -->
+                <section class="prose">
+                    <div class="prose-marker">§II</div>
+                    <h2 class="prose-title">我相信什么</h2>
+                    <ol class="beliefs">
+                        <li>
+                            <span class="belief-num">01</span>
+                            <span class="belief-text"><strong>代码是写给人看的</strong>，顺便能被机器执行。优雅优先于聪明。</span>
+                        </li>
+                        <li>
+                            <span class="belief-num">02</span>
+                            <span class="belief-text"><strong>好工具应该消失</strong>。当用户感觉不到工具存在，它才真正工作。</span>
+                        </li>
+                        <li>
+                            <span class="belief-num">03</span>
+                            <span class="belief-text"><strong>AI 是新的协作者</strong>。架构决策由人做，代码实现可以与 AI 协作完成。</span>
+                        </li>
+                        <li>
+                            <span class="belief-num">04</span>
+                            <span class="belief-text"><strong>沉淀比聪明更重要</strong>。把每天学到的东西写成笔记，半年后你会感谢自己。</span>
+                        </li>
+                        <li>
+                            <span class="belief-num">05</span>
+                            <span class="belief-text"><strong>跨界是优势</strong>。从国土空间规划到 AI Agent，地理 × 技术的交叉给了我独特的视角。</span>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- 时间线 -->
+                <section class="prose">
+                    <div class="prose-marker">§III</div>
+                    <h2 class="prose-title">轨迹</h2>
+                    <ol class="timeline">
+                        <li class="timeline-item">
+                            <span class="timeline-year">2026</span>
+                            <span class="timeline-dot"></span>
+                            <div class="timeline-body">
+                                <h3>沉淀与出发</h3>
+                                <p>6+ AI Agent 项目系统沉淀，MCP 协议先行实践，PyPI 发布 arcgis-agent——把过去两年零散的项目整合成可讲述的工程故事。</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <span class="timeline-year">2025</span>
+                            <span class="timeline-dot"></span>
+                            <div class="timeline-body">
+                                <h3>技术爆发与积累</h3>
+                                <p>完成 zhuochong、project-manager-agent、langchain-langgraph-projects 等核心项目；Claude Code 深度定制（33 Agent + 80 Skill + 5 MCP Server）；Obsidian 沉淀 100+ 笔记。</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <span class="timeline-year">2024</span>
+                            <span class="timeline-dot"></span>
+                            <div class="timeline-body">
+                                <h3>跨界探索与起步</h3>
+                                <p>挑战杯院级二等奖；三创赛项目负责人；开始系统性学习 LangChain、LLM，逐步搭建个人技术知识库。</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <span class="timeline-year">2023</span>
+                            <span class="timeline-dot"></span>
+                            <div class="timeline-body">
+                                <h3>大学起点</h3>
+                                <p>湖南财政经济学院 · 人文地理与城乡规划 · 参加青马工程 · 写下第一份学习笔记。</p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- 技能矩阵 -->
+                <section class="prose">
+                    <div class="prose-marker">§IV</div>
+                    <h2 class="prose-title">能力矩阵</h2>
+                    <p class="prose-intro">像 RPG 一样看待自己 — 数值为相对熟练度 (1-5)，随时间动态调整。</p>
+
+                    <div class="skills">
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">AI Agent 工程</span>
+                                <span class="skill-lv">LV.5</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 90%"></span></div>
+                            <p class="skill-note">LangChain · LangGraph · Multi-Agent · MCP</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">Python 工程化</span>
+                                <span class="skill-lv">LV.5</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 88%"></span></div>
+                            <p class="skill-note">FastAPI · pytest · CI/CD · PyPI 发布</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">后端 / API 设计</span>
+                                <span class="skill-lv">LV.4</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 80%"></span></div>
+                            <p class="skill-note">FastAPI · Flask · SSE · asyncio</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">数据 / 地理信息</span>
+                                <span class="skill-lv">LV.3</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 70%"></span></div>
+                            <p class="skill-note">ArcGIS Pro · pandas · 国土空间规划</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">前端 / 桌面</span>
+                                <span class="skill-lv">LV.3</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 65%"></span></div>
+                            <p class="skill-note">Next.js · PySide6 · Electron · Vue</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">日常开发工具</span>
+                                <span class="skill-lv">LV.5</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 85%"></span></div>
+                            <p class="skill-note">OpenClaw · Claude Code · Codex · Trae IDE · Trae Solo · WorkBuddy</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">知识库管理</span>
+                                <span class="skill-lv">LV.4</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 80%"></span></div>
+                            <p class="skill-note">Notion · Obsidian · IMA · OneNote — 第二大脑四件套</p>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span class="skill-name">写作 / 表达</span>
+                                <span class="skill-lv">LV.3</span>
+                            </div>
+                            <div class="skill-bar"><span style="--w: 60%"></span></div>
+                            <p class="skill-note">技术博客 · 文档 · 沉淀笔记</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 收尾 -->
+                <section class="prose">
+                    <div class="prose-marker">§V</div>
+                    <h2 class="prose-title">如何联系我</h2>
+                    <p>
+                        我相信"工程是慢慢沉淀出来的"。如果你正在做 AI Agent、LLM 应用或 MCP 生态相关的事，欢迎邮件打扰——我愿意和你聊一聊我踩过的坑、沉淀过的笔记、以及那些还在路上的想法。
+                    </p>
+                    <p>
+                        <strong>求职意向</strong>：AI Agent 开发实习生 · 深圳地区 · 3-6 个月可全职 · 每周 3-5 天。
+                    </p>
+                    <p>
+                        也欢迎看看我的 <a href="https://github.com/lzw-cjs" target="_blank" rel="noopener">GitHub</a> 和<a href="李知旺_AI_Agent实习简历.html" target="_blank" rel="noopener" download>简历</a>。
+                    </p>
+
+                    <div class="sign-off">
+                        <p class="sign-line">— 李知旺</p>
+                        <p class="sign-place">写于深圳（求职路上，也是积累路上）</p>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </section>
+
+    <footer class="archive-footer">
+        <div class="footer-divider">
+            <span class="dash">— — —</span>
+            <span class="footer-stamp">END OF DOSSIER</span>
+            <span class="dash">— — —</span>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="index.html" class="footer-link">← 返回档案</a>
+            <p class="footer-credits">
+                <span class="dim">CAT-002 / DOSSIER · 2026</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

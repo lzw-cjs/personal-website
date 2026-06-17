@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李知旺 — AI Agent 工程师 / 作品档案</title>
+    <meta name="description" content="AI Agent 全栈开发者 · 6+ 项目实战 · MCP 协议先行实践 · 求职深圳">
+
+    <!-- 内联 SVG favicon：橙色方块 + 抽象几何"面孔" -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff6b1a'/%3E%3Crect x='6' y='8' width='8' height='8' fill='%230a0908' transform='rotate(-5 10 12)'/%3E%3Ccircle cx='22' cy='12' r='3.5' fill='%231a3a52'/%3E%3Cpolygon points='8,18 24,16 26,28 10,26' fill='%230a0908'/%3E%3C/svg%3E">
+
+    <!-- 字体：衬线显示 + 等宽 + 打字机感 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Special+Elite&family=Noto+Serif+SC:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="archive-mode">
+
+    <!-- 顶部状态条：像旧档案盒的标签 -->
+    <header class="archive-tag">
+        <div class="tag-left">
+            <span class="dot"></span>
+            <span class="archive-id">ARCHIVE / 2099</span>
+        </div>
+        <div class="tag-right">
+            <span class="stamp" id="liveClock">--:--:--</span>
+            <span class="divider">·</span>
+            <span class="stamp">CAT-001 / INDEX</span>
+        </div>
+    </header>
+
+    <!-- 主视觉区 -->
+    <section class="hero">
+        <!-- 背景噪声纹理 -->
+        <div class="noise-layer" aria-hidden="true"></div>
+        <!-- 扫描线 -->
+        <div class="scanlines" aria-hidden="true"></div>
+
+        <!-- 装饰：胶带 + 邮戳 -->
+        <div class="tape tape-tl" aria-hidden="true"></div>
+        <div class="tape tape-tr" aria-hidden="true"></div>
+        <div class="postmark" aria-hidden="true">
+            <div class="postmark-inner">
+                <span>RECOVERED</span>
+                <span class="postmark-line">2089.05.17</span>
+                <span>SECTOR-7</span>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-meta">
+                <span class="file-code">FILE // </span>
+                <span class="file-id" id="fileId">ERR-7742-X</span>
+            </div>
+
+            <h1 class="hero-name">
+                <span class="name-line-1">你好,</span>
+                <span class="name-line-2">我是<span class="ink-splash">李知旺</span></span>
+            </h1>
+
+            <div class="hero-subtitle">
+                <span class="type-prefix">&gt;</span>
+                <span class="typewriter" id="typewriter"></span>
+                <span class="cursor-blink">▌</span>
+            </div>
+
+            <p class="hero-manifesto">
+                这不是一份简历，是一份<span class="hl">沉淀笔记</span>。<br>
+                记录我用 LangChain 凿出的痕迹、用 MCP 协议搭起的桥梁，<br>
+                以及那些<span class="hl-italic">在反复试错中积累下来的、属于我自己的工程直觉</span>。
+            </p>
+
+            <div class="hero-actions">
+                <a href="#works" class="btn btn-primary">
+                    <span class="btn-arrow">↓</span>
+                    <span>进入档案</span>
+                </a>
+                <a href="about.html" class="btn btn-ghost">
+                    <span>查看人物志</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num" data-count="8">0</span>
+                    <span class="stat-label">个 AI Agent 项目</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-count="600">0</span>
+                    <span class="stat-label">+ 测试用例</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-count="4">0</span>
+                    <span class="stat-label">个 MCP Server</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-count="27">0</span>
+                    <span class="stat-label">+ AI 工具评估</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 边角装饰：坐标 + 编号 -->
+        <div class="corner corner-bl" aria-hidden="true">
+            <span>N:31.2304°</span>
+            <span>E:121.4737°</span>
+        </div>
+        <div class="corner corner-br" aria-hidden="true">
+            <span>SIG:OK</span>
+            <span>★ REC</span>
+        </div>
+    </section>
+
+    <!-- 作品集主体 -->
+    <main class="works" id="works">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <h2 class="section-title">
+                <span class="title-num">§01</span>
+                <span class="title-text">作品索引</span>
+                <span class="title-num">/ INDEX</span>
+            </h2>
+            <p class="section-subtitle">按时间倒序排列 — 点击任一卡片查看使用情景与代码</p>
+        </div>
+
+        <!-- 作品卡片网格 -->
+        <div class="works-grid">
+
+            <!-- 作品 1: arcgis-agent（旗舰） -->
+            <article class="work-card work-card--featured" data-cat="AI Agent">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#001</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-live">● LIVE</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">MCP</span>
+                        <span class="tag">arcpy</span>
+                    </div>
+
+                    <h3 class="card-title">arcgis-agent</h3>
+                    <p class="card-tagline">AI Agent CLI for ArcGIS Pro</p>
+
+                    <p class="card-desc">
+                        让 LLM 真正操作 ArcGIS 的开源 Agent。<strong>33 MCP Tools</strong> + Click CLI + FastAPI REST + SSE 三重暴露，<strong>248 单元测试</strong>，已发布 <strong>PyPI v0.1.0</strong>。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">规划师：「帮我找出距离学校 500m 内所有加油站」→ 自然语言直达空间分析</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs/arcgis-agent" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                        <a href="https://pypi.org/project/arcgis-agent/" class="card-link card-link--alt" target="_blank" rel="noopener">
+                            <span>PyPI</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 2: project-manager-agent -->
+            <article class="work-card work-card--featured" data-cat="Multi-Agent">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#002</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-dev">◐ DEV</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastMCP</span>
+                        <span class="tag">DeepSeek</span>
+                        <span class="tag">NetworkX</span>
+                    </div>
+
+                    <h3 class="card-title">project-manager-agent</h3>
+                    <p class="card-tagline">Multi-Agent 项目管理助手 + MCP Server</p>
+
+                    <p class="card-desc">
+                        <strong>5 Agent 协作</strong>（Coordinator + 4 专业 Agent），黑板模式共享状态。FastMCP 2.x 封装 <strong>10 Tools + 3 Resources + 3 Prompts</strong>，<strong>5 平台验证通过</strong>。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">在 Claude Code 中：「分析这个项目的代码质量和架构耦合度」→ 多 Agent 并行分析生成报告</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs/project-manager-agent" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 3: zhuochong -->
+            <article class="work-card work-card--featured" data-cat="桌面应用">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#003</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-stable">○ STABLE</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">PySide6</span>
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">Anthropic</span>
+                        <span class="tag">Edge-TTS</span>
+                    </div>
+
+                    <h3 class="card-title">zhuochong</h3>
+                    <p class="card-tagline">智能桌面宠物 · 文字/语音双模态</p>
+
+                    <p class="card-desc">
+                        4 层架构（UI/Data/Engine/Tools），<strong>7 个 Function Calling 工具</strong>。27 模块，<strong>269 测试 / 77% 覆盖率</strong>。Python 3.10/3.11/3.12 CI 矩阵。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">学习累了，桌面宠物主动问候 + 念一首 AI 写的诗，并提醒你接下来的日程</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 4: langchain-langgraph-projects -->
+            <article class="work-card work-card--featured" data-cat="RAG / LangChain">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#004</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-stable">○ STABLE</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">ChromaDB</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
+
+                    <h3 class="card-title">langchain-langgraph-projects</h3>
+                    <p class="card-tagline">RAG 知识库 + 学习路径生成</p>
+
+                    <p class="card-desc">
+                        4 个子项目 ~6000 行：问答机器人（HyDE+Multi-Query+Reranking）、LangGraph 6 节点学习路径、统一 FastAPI 后端、文档加载器。集成 Context7 + Firecrawl 外部工具。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">上传 LangChain 文档 → RAG 智能问答 + 自动生成 6 节点学习路径 + 知识图谱可视化</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 5: mcp-tts-ffmpeg -->
+            <article class="work-card" data-cat="MCP 多媒体">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#005</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-experiment">▲ EXP</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastMCP</span>
+                        <span class="tag">MOSS-TTS</span>
+                        <span class="tag">FFmpeg</span>
+                    </div>
+
+                    <h3 class="card-title">mcp-tts-ffmpeg</h3>
+                    <p class="card-tagline">MCP 多媒体工具集</p>
+
+                    <p class="card-desc">
+                        <strong>9 个 MCP Tools</strong> + 故事视频生成器。TTS 工具组（合成、声音克隆）+ FFmpeg 工具组（转换、裁剪、音频提取）+ Pipeline 工具组（TTS+视频合成）。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">"帮我把这段文字做成 1 分钟的旁白视频"→ TTS 旁白 + Pillow 图像 + FFmpeg 合成</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 6: NovelForge -->
+            <article class="work-card" data-cat="AI 产品">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#006</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-stable">○ STABLE</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">Electron</span>
+                        <span class="tag">Vue 3</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Neo4j</span>
+                    </div>
+
+                    <h3 class="card-title">NovelForge</h3>
+                    <p class="card-tagline">AI 辅助小说创作平台</p>
+
+                    <p class="card-desc">
+                        Electron 桌面端 + Vue 3 + FastAPI + Neo4j 知识图谱。<strong>GitHub 854⭐</strong>。支持长篇小说的世界观、人物关系、章节大纲的 AI 协同创作。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">网文作者构建百万字世界观 → 知识图谱确保人名/设定/前后文一致不矛盾</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 7: pipeline-deploy -->
+            <article class="work-card" data-cat="数据分析">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#007</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-stable">○ STABLE</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">pandas</span>
+                        <span class="tag">scikit-learn</span>
+                    </div>
+
+                    <h3 class="card-title">pipeline-deploy</h3>
+                    <p class="card-tagline">端到端数据分析 Web 应用</p>
+
+                    <p class="card-desc">
+                        上传数据 → 智能审查 → 深度分析 → 报告生成 <strong>&lt; 1 分钟</strong>。DataAuditor 7 维度画像 + DeepAnalyzer 10 种统计方法链式调用。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">非技术同事上传 CSV → 自动识别字段类型、推荐统计方法、生成可视化报告</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 作品 8: tigang-helper -->
+            <article class="work-card" data-cat="全栈">
+                <div class="card-corner card-corner-tl">
+                    <span class="card-id">#008</span>
+                </div>
+                <div class="card-corner card-corner-tr">
+                    <span class="card-status status-experiment">▲ EXP</span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tag">Next.js 14</span>
+                        <span class="tag">MediaPipe</span>
+                        <span class="tag">PWA</span>
+                    </div>
+
+                    <h3 class="card-title">tigang-helper</h3>
+                    <p class="card-tagline">盆底肌训练 PWA</p>
+
+                    <p class="card-desc">
+                        Next.js 14 + MediaPipe 姿态检测。轻量 PWA 形态，离线可用，数据本地存储。从「一次小需求」开始的全栈尝试。
+                    </p>
+
+                    <div class="card-scenario">
+                        <span class="scenario-label">使用情景 ▸</span>
+                        <span class="scenario-text">每天 5 分钟，手机摄像头检测动作 → 实时反馈训练效果，行程不中断</span>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://github.com/lzw-cjs" class="card-link" target="_blank" rel="noopener">
+                            <span>查看代码</span>
+                            <span class="link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- In Progress 区块 -->
+        <div class="in-progress">
+            <div class="section-header">
+                <div class="section-line"></div>
+                <h2 class="section-title">
+                    <span class="title-num">§02</span>
+                    <span class="title-text">进行中</span>
+                    <span class="title-num">/ IN PROGRESS</span>
+                </h2>
+                <p class="section-subtitle">下一个 30 天 — 正在沉淀的三个项目</p>
+            </div>
+
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <span class="progress-id">P-01</span>
+                        <span class="progress-date">5/26 - 6/8</span>
+                    </div>
+                    <h3 class="progress-title">AI Hub CLI</h3>
+                    <p class="progress-desc">统一 AI 工具管理器（CLI / 测试 / Docker）</p>
+                </div>
+
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <span class="progress-id">P-02</span>
+                        <span class="progress-date">6/9 - 6/29</span>
+                    </div>
+                    <h3 class="progress-title">Brain RAG</h3>
+                    <p class="progress-desc">个人知识库搜索引擎（RAG 进阶 / 异步 / 向量 DB）</p>
+                </div>
+
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <span class="progress-id">P-03</span>
+                        <span class="progress-date">6/30 - 7/20</span>
+                    </div>
+                    <h3 class="progress-title">Code Sentinel</h3>
+                    <p class="progress-desc">AI 代码审查 Agent（多 Agent / CI/CD / 容错）</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 实验场 -->
+    <section class="lab">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <h2 class="section-title">
+                <span class="title-num">§02</span>
+                <span class="title-text">实验残篇</span>
+                <span class="title-num">/ SHARDS</span>
+            </h2>
+            <p class="section-subtitle">半成品 · 失败品 · 周日下午的乱涂</p>
+        </div>
+
+        <div class="shards">
+            <a href="#" class="shard">
+                <span class="shard-num">S/017</span>
+                <span class="shard-title">飞书 CLI 集成实战</span>
+                <span class="shard-date">2026·05</span>
+            </a>
+            <a href="#" class="shard">
+                <span class="shard-num">S/022</span>
+                <span class="shard-title">Pydantic AI Agent 探索</span>
+                <span class="shard-date">2026·05</span>
+            </a>
+            <a href="#" class="shard">
+                <span class="shard-num">S/031</span>
+                <span class="shard-title">Claude Code Hook 自动化</span>
+                <span class="shard-date">2026·04</span>
+            </a>
+            <a href="#" class="shard">
+                <span class="shard-num">S/044</span>
+                <span class="shard-title">MCP 协议源码阅读</span>
+                <span class="shard-date">2026·04</span>
+            </a>
+            <a href="#" class="shard">
+                <span class="shard-num">S/052</span>
+                <span class="shard-title">ArcGIS arcpy 椭球面积脚本</span>
+                <span class="shard-date">2025·11</span>
+            </a>
+            <a href="#" class="shard">
+                <span class="shard-num">S/063</span>
+                <span class="shard-title">Edge-TTS 工具封装</span>
+                <span class="shard-date">2025·10</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 成就 -->
+    <section class="achievements">
+        <div class="section-header">
+            <div class="section-line"></div>
+            <h2 class="section-title">
+                <span class="title-num">§03</span>
+                <span class="title-text">成就</span>
+                <span class="title-num">/ ACHIEVEMENTS</span>
+            </h2>
+            <p class="section-subtitle">从竞赛、项目到产品化 — 这些是过程中沉淀下来的标记</p>
+        </div>
+
+        <div class="achievements-grid">
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🏆</span>
+                <h3 class="achievement-title">挑战杯院级二等奖</h3>
+                <p class="achievement-meta">2024.03</p>
+                <p class="achievement-desc">团队项目 · 院级荣誉</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🥇</span>
+                <h3 class="achievement-title">三创赛项目负责人</h3>
+                <p class="achievement-meta">2025.04</p>
+                <p class="achievement-desc">农产品竞品市场研究 · 4 平台</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">📦</span>
+                <h3 class="achievement-title">arcgis-agent PyPI 发布</h3>
+                <p class="achievement-meta">v0.1.0</p>
+                <p class="achievement-desc">个人首个 PyPI 包 · 248 测试</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🛠️</span>
+                <h3 class="achievement-title">4 个自建 MCP Server</h3>
+                <p class="achievement-meta">33+ Tools</p>
+                <p class="achievement-desc">GIS / 项目管理 / 多媒体 / 社交</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">✅</span>
+                <h3 class="achievement-title">MCP 5 平台验证</h3>
+                <p class="achievement-meta">5/5 通过</p>
+                <p class="achievement-desc">Claude Code / Desktop / Cursor / Trea / OpenClaw</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🤖</span>
+                <h3 class="achievement-title">27+ AI 编程助手评测</h3>
+                <p class="achievement-meta">深度评测</p>
+                <p class="achievement-desc">Cursor / Claude Code / Cline / Trae ...</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">📊</span>
+                <h3 class="achievement-title">8+ AI Agent 项目</h3>
+                <p class="achievement-meta">6+ 主要</p>
+                <p class="achievement-desc">RAG / Multi-Agent / 桌面 / Web 全覆盖</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🧪</span>
+                <h3 class="achievement-title">600+ 测试用例</h3>
+                <p class="achievement-meta">248 + 269 + 54 + ...</p>
+                <p class="achievement-desc">arcgis-agent / zhuochong / project-manager</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🗺️</span>
+                <h3 class="achievement-title">3000+ ArcGIS 国土空间规划</h3>
+                <p class="achievement-meta">3K+ 文件</p>
+                <p class="achievement-desc">DEM / 遥感 / 矢量数据 · 石牛寨实训</p>
+            </div>
+
+            <div class="achievement-card">
+                <span class="achievement-icon">🎓</span>
+                <h3 class="achievement-title">大创 / 三创 / 互联网+ 负责人</h3>
+                <p class="achievement-meta">3+ 项目</p>
+                <p class="achievement-desc">多次项目负责人经历</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <footer class="archive-footer">
+        <div class="footer-divider">
+            <span class="dash">— — —</span>
+            <span class="footer-stamp">END OF FILE</span>
+            <span class="dash">— — —</span>
+        </div>
+
+        <div class="contact-grid">
+            <a href="mailto:18797734820@163.com" class="contact-item">
+                <span class="contact-label">EMAIL</span>
+                <span class="contact-value">18797734820@163.com</span>
+            </a>
+            <a href="https://github.com/lzw-cjs" class="contact-item" target="_blank" rel="noopener">
+                <span class="contact-label">GITHUB</span>
+                <span class="contact-value">@lzw-cjs</span>
+            </a>
+            <a href="李知旺_AI_Agent实习简历.html" class="contact-item" target="_blank" rel="noopener" download>
+                <span class="contact-label">RESUME</span>
+                <span class="contact-value">李知旺 · AI Agent 实习</span>
+            </a>
+            <a href="https://github.com/lzw-cjs/project-manager-agent" class="contact-item" target="_blank" rel="noopener">
+                <span class="contact-label">FEATURED</span>
+                <span class="contact-value">project-manager-agent ↗</span>
+            </a>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-credits">
+                © 2026 — 制作于一个下雨的星期三<br>
+                <span class="dim">No frameworks were harmed · Vanilla JS · Handcrafted</span>
+            </p>
+            <a href="about.html" class="footer-link">关于此人 →</a>
+        </div>
+
+        <!-- 隐藏彩蛋提示 -->
+        <p class="konami-hint">↑↑↓↓←→←→ BA</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

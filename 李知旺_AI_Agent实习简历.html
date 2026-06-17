@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>简历 - AI Agent 开发实习生</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", sans-serif;
+    color: #2d2d2d;
+    background: #d0d0d0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+    position: relative;
+  }
+
+  /* ── Left Sidebar ── */
+  .sidebar {
+    background: linear-gradient(170deg, #0b1d3a 0%, #132d5e 40%, #1a3f7a 100%);
+    color: #dce6f5;
+    padding: 22mm 5mm 16mm 6mm;
+    position: relative;
+  }
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 1px; height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.15), transparent);
+  }
+
+  .avatar-ring {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 2.5px solid rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 14px auto;
+    background: rgba(255,255,255,0.08);
+  }
+  .avatar-ring .initials {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .sidebar h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+  }
+  .sidebar .subtitle {
+    font-size: 10.5px;
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+
+  .sb-section { margin-bottom: 16px; }
+  .sb-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .contact-list { font-size: 10px; line-height: 2; }
+  .contact-list .ci { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 2px; }
+  .contact-list .ci-icon {
+    flex-shrink: 0;
+    width: 14px; height: 14px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 8px; color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+  }
+  .contact-list .ci-text { color: #c5d3e8; word-break: break-all; }
+
+  /* Skill bars */
+  .skill-item { margin-bottom: 6px; }
+  .skill-label {
+    font-size: 10px;
+    color: #c5d3e8;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .skill-label .level { color: rgba(255,255,255,0.45); font-size: 9px; }
+  .skill-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-bar .fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #4da3ff, #7ec8ff);
+  }
+
+  .sb-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .sb-tag {
+    font-size: 9px;
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  /* ── Main Content ── */
+  .main {
+    padding: 18mm 16mm 14mm 14mm;
+  }
+
+  .section { margin-bottom: 14px; }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .section-icon {
+    width: 22px; height: 22px;
+    background: linear-gradient(135deg, #0b1d3a, #1a3f7a);
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: #fff;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0b1d3a;
+    letter-spacing: 2px;
+  }
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #c0cde0, transparent);
+  }
+
+  /* Project */
+  .project {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    background: #f8fafd;
+    border-left: 3px solid #1a3f7a;
+    border-radius: 0 6px 6px 0;
+  }
+  .project-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+  }
+  .project-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0b1d3a;
+  }
+  .project-tech {
+    font-size: 9.5px;
+    color: #5a7a9e;
+    background: #e4edf7;
+    padding: 2px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .project-link {
+    font-size: 10px;
+    color: #7a8ea3;
+    margin-bottom: 4px;
+  }
+  .project-desc {
+    font-size: 11px;
+    color: #3a3a3a;
+    line-height: 1.75;
+    padding-left: 12px;
+  }
+  .project-desc li { margin-bottom: 1px; }
+  .project-desc li::marker { color: #1a3f7a; }
+  .project-desc b { color: #0b1d3a; font-weight: 600; }
+
+  /* Education */
+  .edu-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .edu-school {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0b1d3a;
+    margin-bottom: 2px;
+  }
+  .edu-detail {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.7;
+  }
+  .edu-time {
+    font-size: 11px;
+    color: #7a8ea3;
+    white-space: nowrap;
+    padding-top: 1px;
+  }
+
+  /* Other */
+  .other-list {
+    font-size: 11px;
+    line-height: 1.8;
+    color: #3a3a3a;
+    padding-left: 14px;
+  }
+  .other-list li { margin-bottom: 2px; }
+  .other-list li::marker { color: #1a3f7a; }
+  .other-list b { color: #0b1d3a; }
+
+  /* Self */
+  .self-text {
+    font-size: 11px;
+    color: #444;
+    line-height: 1.85;
+    text-indent: 2em;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .page { width: 100%; min-height: auto; box-shadow: none; margin: 0; }
+  }
+  @media screen {
+    .page { box-shadow: 0 8px 40px rgba(0,0,0,0.18); margin: 20px auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Sidebar ── -->
+  <div class="sidebar">
+    <div class="avatar-ring"><span class="initials">XX</span></div>
+    <h1>XXX</h1>
+    <div class="subtitle">AI Agent 开发实习生</div>
+
+    <!-- Contact -->
+    <div class="sb-section">
+      <div class="sb-title">联系方式</div>
+      <div class="contact-list">
+        <div class="ci"><div class="ci-icon">T</div><div class="ci-text">138-XXXX-XXXX</div></div>
+        <div class="ci"><div class="ci-icon">@</div><div class="ci-text">xxx@email.com</div></div>
+        <div class="ci"><div class="ci-icon">G</div><div class="ci-text">github.com/your-username</div></div>
+        <div class="ci"><div class="ci-icon">L</div><div class="ci-text">深圳 · 2026年X月可到岗</div></div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sb-section">
+      <div class="sb-title">核心技能</div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Python</span><span class="level">熟练</span></div>
+        <div class="skill-bar"><div class="fill" style="width:92%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>LangChain / LangGraph</span><span class="level">熟悉</span></div>
+        <div class="skill-bar"><div class="fill" style="width:82%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>RAG / ChromaDB</span><span class="level">熟悉</span></div>
+        <div class="skill-bar"><div class="fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Prompt Engineering</span><span class="level">熟悉</span></div>
+        <div class="skill-bar"><div class="fill" style="width:78%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>PySide6 / Streamlit</span><span class="level">熟悉</span></div>
+        <div class="skill-bar"><div class="fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>SQL / Linux / Git</span><span class="level">了解</span></div>
+        <div class="skill-bar"><div class="fill" style="width:55%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-label"><span>Docker / Django</span><span class="level">了解</span></div>
+        <div class="skill-bar"><div class="fill" style="width:45%"></div></div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div class="sb-section">
+      <div class="sb-title">AI 工具链</div>
+      <div class="sb-tags">
+        <span class="sb-tag">Claude Code</span>
+        <span class="sb-tag">Ollama</span>
+        <span class="sb-tag">LM Studio</span>
+        <span class="sb-tag">Copilot</span>
+        <span class="sb-tag">Chatbox</span>
+        <span class="sb-tag">OpenClaw</span>
+        <span class="sb-tag">Aider</span>
+        <span class="sb-tag">Trae</span>
+      </div>
+    </div>
+
+    <!-- API -->
+    <div class="sb-section">
+      <div class="sb-title">API 集成</div>
+      <div class="sb-tags">
+        <span class="sb-tag">OpenAI</span>
+        <span class="sb-tag">Anthropic</span>
+        <span class="sb-tag">ZhipuAI</span>
+        <span class="sb-tag">SenseNova</span>
+        <span class="sb-tag">DeepSeek</span>
+        <span class="sb-tag">Moonshot</span>
+      </div>
+    </div>
+
+    <!-- Education (sidebar) -->
+    <div class="sb-section">
+      <div class="sb-title">教育背景</div>
+      <div style="font-size:11px; font-weight:700; color:#fff; margin-bottom:2px;">XX 大学</div>
+      <div style="font-size:10px; color:#c5d3e8; line-height:1.7;">
+        计算机科学与技术 · 本科<br>
+        20XX.09 — 至今<br>
+        GPA X.X / 4.0 · 前 X%
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main Content ── -->
+  <div class="main">
+
+    <!-- Projects -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">P</div>
+        <div class="section-title">项目经历</div>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <span class="project-name">RAG 智能问答系统 + 学习路径生成器</span>
+          <span class="project-tech">LangChain · LangGraph · ChromaDB</span>
+        </div>
+        <div class="project-link">github.com/your-username/langchain-langgraph-projects</div>
+        <ul class="project-desc">
+          <li>基于 LangChain + ChromaDB 构建中文知识库问答系统，支持 PDF / TXT / Markdown 多格式加载，累计处理 <b>50+ 份文档</b></li>
+          <li>实现 <b>QueryRouter</b> 查询路由器，自动分类 global / local / hybrid 检索策略；叠加 HyDE + Multi-Query + LLM Reranking 三层增强，<b>Top-3 命中率 62% → 89%</b></li>
+          <li>构建两阶段知识图谱（逐文档提取 → 跨文档合并），模糊匹配实体消歧，自动提取 <b>10-20 实体/文档</b></li>
+          <li>用 LangGraph <b>StateGraph</b> 搭建 6 节点学习路径流水线，支持条件分支路由；集成 Context7、Firecrawl 外部工具</li>
+          <li>滑动窗口历史管理 + LRU 会话淘汰 + 流式输出，端到端响应 <b>&lt; 2s</b></li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <span class="project-name">智能桌面宠物（多模态 AI Agent）</span>
+          <span class="project-tech">PySide6 · OpenAI / Anthropic · edge-tts</span>
+        </div>
+        <div class="project-link">github.com/your-username/zhuochong</div>
+        <ul class="project-desc">
+          <li>基于 PySide6 开发像素风水獭桌面宠物，集成 <b>AI 聊天 + 语音合成 + 日程管理</b>三大核心功能</li>
+          <li>设计统一 LLM 接口层，支持 OpenAI / Anthropic 双后端无缝切换；多模型容错策略（DeepSeek 主力 + Kimi fallback）</li>
+          <li>集成 edge-tts 构建完整 TTS 管线，端到端语音响应 <b>&lt; 500ms</b>；QTimer 驱动帧动画状态机</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <span class="project-name">数据分析自动化 Agent</span>
+          <span class="project-tech">ZhipuAI GLM · pandas</span>
+        </div>
+        <div class="project-link">github.com/your-username/my_ai_study</div>
+        <ul class="project-desc">
+          <li>基于智谱 GLM 实现自然语言驱动的 CSV 数据分析 Agent，自动识别数据结构并生成可执行分析代码</li>
+          <li>实现 CrossAnalyzer（交叉频次 + 卡方检验 + Cramér's V）+ InsightGenerator（规则引擎 + 自然语言洞察），<b>覆盖 6 种统计场景</b></li>
+          <li>内置安全约束（禁用 eval / exec），模块化架构，更换问卷仅需修改配置文件</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <span class="project-name">智能数据分析 Web 应用</span>
+          <span class="project-tech">Streamlit · scikit-learn · pandas</span>
+        </div>
+        <div class="project-link">github.com/your-username/pipeline-deploy</div>
+        <ul class="project-desc">
+          <li>基于 Streamlit 构建端到端分析平台，7 维度 DataAuditor 自动推荐适用方法；集成 <b>10 种统计方法</b>链式调用</li>
+          <li>三 Tab 布局（单文件 / 批量 / 历史），BatchProcessor 多文件并发，单次分析 <b>&lt; 1 分钟</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education Detail -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">E</div>
+        <div class="section-title">教育背景</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-school">XX 大学 · 计算机科学与技术 · 本科</div>
+          <div class="edu-detail">相关课程：数据结构与算法、机器学习、自然语言处理、数据库系统、计算机网络</div>
+        </div>
+        <div class="edu-time">20XX.09 — 至今</div>
+      </div>
+    </div>
+
+    <!-- Other -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">+</div>
+        <div class="section-title">其他亮点</div>
+        <div class="section-line"></div>
+      </div>
+      <ul class="other-list">
+        <li><b>AI-Native 开发模式：</b>项目中 90%+ 代码由 AI 辅助生成，配置 Claude Code（3 MCP 服务器、20+ 自定义 Agent）、OpenClaw 多模型平台</li>
+        <li><b>跨平台 API 集成：</b>同时对接 OpenAI / Anthropic / ZhipuAI / SenseNova 四家 API，具备统一接口层设计经验</li>
+        <li><b>技术社区贡献：</b>AI Agent 开发生态总结项目，收录 27 个 AI 编程助手、12+ AI 工具的完整开发生态梳理</li>
+      </ul>
+    </div>
+
+    <!-- Self -->
+    <div class="section" style="margin-bottom:0;">
+      <div class="section-head">
+        <div class="section-icon">M</div>
+        <div class="section-title">自我评价</div>
+        <div class="section-line"></div>
+      </div>
+      <div class="self-text">
+        专注于 AI Agent 和大模型应用开发，具备 LangChain + LangGraph 全链路 RAG 实战经验，熟悉多模型策略与跨平台 API 集成。拥有从需求分析到产品交付的独立开发能力，持续跟踪 Agent 技术前沿（Agentic RAG、Multi-Agent 协作），学习能力强，期望在实际业务场景中将 AI 技术落地。
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
