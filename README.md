@@ -23,8 +23,8 @@ personal-website/
 ├── style.css                               # 全局样式 + 响应式（768/600/480px）
 ├── about.css                               # About 页专属样式
 ├── script.js                               # 交互脚本（打字机 / 数字动画 / Konami 彩蛋）
-├── 李知旺_AI_Agent实习简历.html           # 可下载的 HTML 简历
-├── 李知旺_AI_Agent实习简历.md              # 简历 Markdown 源
+├── resume.html                               # 可下载的 HTML 简历
+├── resume.md                                 # 简历 Markdown 源
 ├── PLAN.md                                 # 网站改造实施计划
 ├── .gitignore
 └── README.md
